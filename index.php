@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/frame.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
@@ -15,7 +15,7 @@
             <li class="list-group-item"><div class="btn-group me-2" role="group" aria-label="Первая группа">
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" value="C" type="button" style="width: 50px; background-color: #605d63; color: white;" id="button-addon1">С</button>
-                <input type="text" class="form-control" style="width: 150px;" placeholder="5+5=10" aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
+                <input type="text" id='sosat' class="form-control" style="width: 150px;"  aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
               </div>
 
 
@@ -47,6 +47,7 @@
           </ul>
       </form>
     </div>
+
     <script src="assets/functions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>

@@ -10,12 +10,12 @@
   <body>
     <div class="container">
       <h1>Калькулятор</h1>
-      <form>
+      <form method="post" action="functions.php">
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><div class="btn-group me-2" role="group" aria-label="Первая группа">
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" value="C" type="button" style="width: 50px; background-color: #605d63; color: white;" id="button-addon1">С</button>
-                <input type="text" id='sosat' class="form-control" style="width: 150px;"  aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
+                <input type="text" name='otv' id='sosat' class="form-control" style="width: 150px;"  aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
               </div>
 
 
@@ -42,13 +42,23 @@
               <button type="button" value="/" style="width: 50px; background-color: #605d63; color: white;" class="btn btn-outline-secondary">\</button>
               <button type="button" value="0" style="width: 50px;" class="btn btn-outline-secondary">0</button>
               <button type="button" value="," style="width: 50px; background-color: #605d63; color: white;" class="btn btn-outline-secondary">,</button>
-              <button type="button" value="=" style="width: 50px; background-color: #605d63; color: white;" class="btn btn-outline-secondary">=</button>
+              <button type="submit" id="otvet" value="=" style="width: 50px; background-color: #605d63; color: white;" class="btn btn-outline-secondary">=</button>
             </div></li>
           </ul>
       </form>
     </div>
 
     <script src="assets/functions.js"></script>
+    <?php 
+      if (isset($_POST['otv'])) {
+      echo "string";
+      $SEMEE = $_POST['otv'];
+      echo $_POST['otv'];
+    }else{
+      $SEMEE = '';
+    }
+
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

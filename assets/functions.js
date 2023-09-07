@@ -31,6 +31,7 @@ $(document).ready(function(){
 			arr = [];
   		}else{
 			arr.push(this.value);
+			console.log(arr)
 			var primer = arr.join('');
   			$('#sosat').attr('placeholder', primer);
   		}

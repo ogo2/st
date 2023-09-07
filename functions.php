@@ -2,7 +2,6 @@
 	echo "suka";
   if (isset($_POST['otv'])){
     require('vender/connect.php');
-    echo $_POST['otv'];
     $otv_po = $_POST['otv'];
     $ip_users = $_SERVER['REMOTE_ADDR'];
     $add_product = "INSERT INTO otvet (ip_users, otv) VALUES ('$ip_users', '$otv_po');";

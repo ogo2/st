@@ -10,12 +10,12 @@
   <body>
     <div class="container">
       <h1>Калькулятор</h1>
-      <form method="post" action="functions.php">
+      <form method="post" >
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><div class="btn-group me-2" role="group" aria-label="Первая группа">
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" value="C" type="button" style="width: 50px; background-color: #605d63; color: white;" id="button-addon1">С</button>
-                <input type="text" name='otv' id='sosat' class="form-control" style="width: 150px;"  aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
+                <input readonly="readonly" type="text" name='otv' id='sosat' class="form-control" style="width: 150px;"  aria-label="Пример текста с надстройкой кнопкой" aria-describedby="button-addon1">
               </div>
 
 
@@ -50,13 +50,17 @@
 
     <script src="assets/functions.js"></script>
     <?php 
-      if (isset($_POST['otv'])) {
-      echo "string";
-      $SEMEE = $_POST['otv'];
-      echo $_POST['otv'];
-    }else{
-      $SEMEE = '';
-    }
+      require('vender/connect.php');
+      $select_product = "SELECT ip_users, otv FROM otvet";
+      $result = $CONNECT->query($select_product);
+
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          echo "<br>" . "ip user: " . $row["ip_users"] . "&nbsp" . "Ответ пользователя: " . $row['otv'];
+        }
+      } else {
+        echo "0 results";
+      }
 
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
